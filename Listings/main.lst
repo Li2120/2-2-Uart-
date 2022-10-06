@@ -1,0 +1,58 @@
+C51 COMPILER V9.60.0.0   MAIN                                                              10/05/2022 21:56:44 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <stdio.h>
+   2          #include "uart.h"
+   3          
+   4          void  GPIO_config(void)
+   5          {
+   6   1        P5M0 = 0;
+   7   1        P5M1 = 0;
+   8   1      }
+   9          /*----------------------------
+  10          接线：RX》TX    TX》RX
+  11          Uart1  P36 RX1 P37 TX1  
+  12          Uart2  P10 RX2 P11 TX2
+  13          Uart3  P00 RX3 P01 TX3
+  14          Uart4  P02 RX4 P03 TX4
+  15          ----------------------------*/
+  16          void main(void)
+  17          {
+  18   1        GPIO_config();
+  19   1        UartInit();
+  20   1        Uart4_SendString("Please enter your command:");
+  21   1        delayms(200);
+  22   1      
+  23   1        while (1) {
+  24   2          if(Uart4_Hand("ledon")){
+  25   3            LED = LED_ON;
+  26   3            Uart4_CLR_Buf();
+  27   3            Uart4_SendString("LED ON!\r\t");
+  28   3          }else if(Uart4_Hand("ledoff")) {
+  29   3            LED = LED_OFF;
+  30   3            Uart4_CLR_Buf();
+  31   3            Uart4_SendString("LED OFF!\r\t");
+  32   3          }
+  33   2        }
+  34   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     82    ----
+   CONSTANT SIZE    =     61    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

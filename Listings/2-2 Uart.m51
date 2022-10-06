@@ -1,0 +1,561 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    10/05/2022  21:56:44  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\uart.obj TO .\Objects\2-2 Uart PRINT (.\Listings\2-2 Uart.m51)
+>>  RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\uart.obj (UART)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (STRSTR)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C?MEMSET)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\2-2 Uart (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000FH     UNIT         _DATA_GROUP_
+            DATA    0017H     0004H     UNIT         ?DT?UART
+            DATA    001BH     0003H     UNIT         ?DT?_UART1_SENDSTRING?UART
+                    001EH     0002H                  *** GAP ***
+            BIT     0020H.0   0000H.3   UNIT         ?BI?UART
+                    0020H.3   0000H.5                *** GAP ***
+            DATA    0021H     0003H     UNIT         ?DT?_UART1_HAND?UART
+            DATA    0024H     0003H     UNIT         ?DT?_UART2_SENDSTRING?UART
+            DATA    0027H     0003H     UNIT         ?DT?_UART2_HAND?UART
+            DATA    002AH     0003H     UNIT         ?DT?_UART3_SENDSTRING?UART
+            DATA    002DH     0003H     UNIT         ?DT?_UART3_HAND?UART
+            IDATA   0030H     0014H     UNIT         ?ID?UART
+            IDATA   0044H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     003CH     UNIT         ?XD?UART
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001EH     UNIT         ?PR?_UART1_HAND?UART
+                    0021H     0002H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     0017H     UNIT         ?PR?_DELAYMS?UART
+            CODE    003DH     0006H     UNIT         ?PR?GPIO_CONFIG?MAIN
+            CODE    0043H     0003H     ABSOLUTE     
+            CODE    0046H     0045H     UNIT         ?C?LIB_CODE
+            CODE    008BH     0003H     ABSOLUTE     
+                    008EH     0005H                  *** GAP ***
+            CODE    0093H     0003H     ABSOLUTE     
+            CODE    0096H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0122H     0082H     UNIT         ?PR?_STRSTR?STRSTR
+            CODE    01A4H     006BH     UNIT         ?PR?UARTINIT?UART
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/05/2022  21:56:44  PAGE 2
+
+
+            CODE    020FH     004CH     UNIT         ?PR?MAIN?MAIN
+            CODE    025BH     0049H     UNIT         ?PR?UART2?UART
+            CODE    02A4H     0049H     UNIT         ?PR?UART3?UART
+            CODE    02EDH     0049H     UNIT         ?PR?UART4?UART
+            CODE    0336H     003DH     UNIT         ?CO?MAIN
+            CODE    0373H     0035H     UNIT         ?PR?UART1?UART
+            CODE    03A8H     0025H     UNIT         ?PR?_UART1_SENDSTRING?UART
+            CODE    03CDH     0025H     UNIT         ?PR?_UART2_SENDSTRING?UART
+            CODE    03F2H     0025H     UNIT         ?PR?_UART3_SENDSTRING?UART
+            CODE    0417H     0025H     UNIT         ?PR?_UART4_SENDSTRING?UART
+            CODE    043CH     001EH     UNIT         ?PR?_UART2_HAND?UART
+            CODE    045AH     001EH     UNIT         ?PR?_UART3_HAND?UART
+            CODE    0478H     001EH     UNIT         ?PR?_UART4_HAND?UART
+            CODE    0496H     0013H     UNIT         ?PR?UART1_CLR_BUF?UART
+            CODE    04A9H     0013H     UNIT         ?PR?UART2_CLR_BUF?UART
+            CODE    04BCH     0013H     UNIT         ?PR?UART3_CLR_BUF?UART
+            CODE    04CFH     0013H     UNIT         ?PR?UART4_CLR_BUF?UART
+            CODE    04E2H     0013H     UNIT         ?C_INITSEG
+            CODE    04F5H     0008H     UNIT         ?PR?_UART1_SENDDATA?UART
+            CODE    04FDH     0008H     UNIT         ?PR?_UART2_SENDDATA?UART
+            CODE    0505H     0008H     UNIT         ?PR?_UART3_SENDDATA?UART
+            CODE    050DH     0008H     UNIT         ?PR?_UART4_SENDDATA?UART
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\2-2 Uart (MAIN)
+
+
+SEGMENT                              DATA_GROUP 
+  +--> CALLED SEGMENT              START    LENGTH
+--------------------------------------------------
+?C_C51STARTUP                      -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                      -----    -----
+  +--> ?PR?GPIO_CONFIG?MAIN
+  +--> ?PR?UARTINIT?UART
+  +--> ?CO?MAIN
+  +--> ?PR?_UART4_SENDSTRING?UART
+  +--> ?PR?_DELAYMS?UART
+  +--> ?PR?_UART4_HAND?UART
+  +--> ?PR?UART4_CLR_BUF?UART
+
+?PR?_UART4_SENDSTRING?UART         0008H    0003H
+  +--> ?PR?_UART4_SENDDATA?UART
+
+?PR?_UART4_HAND?UART               0008H    0003H
+  +--> ?PR?_STRSTR?STRSTR
+
+?PR?_STRSTR?STRSTR                 000BH    000CH
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\2-2 Uart (MAIN)
+
+  VALUE           TYPE          NAME
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/05/2022  21:56:44  PAGE 3
+
+
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00CAH         PUBLIC        P5M0
+  D:00B0H         PUBLIC        P3
+  D:00C9H         PUBLIC        P5M1
+  D:00C0H         PUBLIC        P4
+  D:00C8H         PUBLIC        P5
+  D:00E8H         PUBLIC        P6
+  D:00F8H         PUBLIC        P7
+  C:003DH         PUBLIC        GPIO_config
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:020FH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00C8H.5       PUBLIC        LED
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          GPIO_CONFIG
+  C:003DH         LINE#         4
+  C:003DH         LINE#         5
+  C:003DH         LINE#         6
+  C:0040H         LINE#         7
+  C:0042H         LINE#         8
+  -------         ENDPROC       GPIO_CONFIG
+  -------         PROC          MAIN
+  C:020FH         LINE#         16
+  C:020FH         LINE#         17
+  C:020FH         LINE#         18
+  C:0212H         LINE#         19
+  C:0215H         LINE#         20
+  C:021EH         LINE#         21
+  C:0225H         LINE#         23
+  C:0225H         LINE#         24
+  C:0230H         LINE#         25
+  C:0232H         LINE#         26
+  C:0235H         LINE#         27
+  C:023EH         LINE#         28
+  C:024BH         LINE#         29
+  C:024DH         LINE#         30
+  C:0250H         LINE#         31
+  C:0259H         LINE#         32
+  C:0259H         LINE#         33
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00B2H         PUBLIC        P3M0
+  D:0090H         PUBLIC        P1
+  D:00B1H         PUBLIC        P3M1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/05/2022  21:56:44  PAGE 4
+
+
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00C8H         PUBLIC        P5
+  B:00A8H.7       PUBLIC        EA
+  D:00E8H         PUBLIC        P6
+  B:0020H.0       PUBLIC        B_TX2_Busy
+  D:00F8H         PUBLIC        P7
+  B:0020H.1       PUBLIC        B_TX3_Busy
+  B:0020H.2       PUBLIC        B_TX4_Busy
+  D:00A2H         PUBLIC        P_SW1
+  D:00A8H         PUBLIC        IE
+  C:0496H         PUBLIC        Uart1_CLR_Buf
+  C:04A9H         PUBLIC        Uart2_CLR_Buf
+  C:04BCH         PUBLIC        Uart3_CLR_Buf
+  C:04CFH         PUBLIC        Uart4_CLR_Buf
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  D:00D8H         PUBLIC        CCON
+  C:0003H         PUBLIC        _Uart1_Hand
+  C:043CH         PUBLIC        _Uart2_Hand
+  C:045AH         PUBLIC        _Uart3_Hand
+  C:0478H         PUBLIC        _Uart4_Hand
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  C:01A4H         PUBLIC        UartInit
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:03A8H         PUBLIC        _Uart1_SendString
+  C:03CDH         PUBLIC        _Uart2_SendString
+  C:04F5H         PUBLIC        _Uart1_SendData
+  C:03F2H         PUBLIC        _Uart3_SendString
+  C:04FDH         PUBLIC        _Uart2_SendData
+  C:0417H         PUBLIC        _Uart4_SendString
+  C:0505H         PUBLIC        _Uart3_SendData
+  C:050DH         PUBLIC        _Uart4_SendData
+  D:00AFH         PUBLIC        IE2
+  D:008EH         PUBLIC        AUXR
+  I:0030H         PUBLIC        Uart1_Rec_Buf
+  B:00A8H.3       PUBLIC        ET1
+  X:0000H         PUBLIC        Uart2_Rec_Buf
+  X:0014H         PUBLIC        Uart3_Rec_Buf
+  X:0028H         PUBLIC        Uart4_Rec_Buf
+  D:008DH         PUBLIC        TH1
+  D:00D6H         PUBLIC        T2H
+  C:0373H         PUBLIC        Uart1
+  D:00D4H         PUBLIC        T3H
+  C:025BH         PUBLIC        Uart2
+  D:00D2H         PUBLIC        T4H
+  C:02A4H         PUBLIC        Uart3
+  D:008BH         PUBLIC        TL1
+  C:02EDH         PUBLIC        Uart4
+  D:00D7H         PUBLIC        T2L
+  D:00D5H         PUBLIC        T3L
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/05/2022  21:56:44  PAGE 5
+
+
+  D:00D3H         PUBLIC        T4L
+  B:0088H.6       PUBLIC        TR1
+  D:00D1H         PUBLIC        T4T3M
+  D:0017H         PUBLIC        point1
+  D:0018H         PUBLIC        point2
+  D:0019H         PUBLIC        point3
+  D:001AH         PUBLIC        point4
+  D:009BH         PUBLIC        S2BUF
+  D:00ADH         PUBLIC        S3BUF
+  D:0085H         PUBLIC        S4BUF
+  D:009AH         PUBLIC        S2CON
+  D:00ACH         PUBLIC        S3CON
+  D:0084H         PUBLIC        S4CON
+  C:0026H         PUBLIC        _delayms
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAYMS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0026H         LINE#         26
+  C:0026H         LINE#         28
+  C:0026H         LINE#         29
+  C:002AH         LINE#         30
+  C:0033H         LINE#         31
+  C:003CH         LINE#         32
+  -------         ENDPROC       _DELAYMS
+  -------         PROC          UARTINIT
+  C:01A4H         LINE#         37
+  C:01A4H         LINE#         38
+  C:01A4H         LINE#         40
+  C:01A7H         LINE#         41
+  C:01AAH         LINE#         43
+  C:01B2H         LINE#         45
+  C:01B5H         LINE#         46
+  C:01B8H         LINE#         47
+  C:01BBH         LINE#         48
+  C:01BEH         LINE#         49
+  C:01C1H         LINE#         50
+  C:01C4H         LINE#         51
+  C:01C7H         LINE#         52
+  C:01CAH         LINE#         53
+  C:01CCH         LINE#         54
+  C:01CEH         LINE#         56
+  C:01D1H         LINE#         57
+  C:01D4H         LINE#         58
+  C:01D7H         LINE#         59
+  C:01DAH         LINE#         60
+  C:01DDH         LINE#         62
+  C:01E0H         LINE#         63
+  C:01E3H         LINE#         64
+  C:01E6H         LINE#         65
+  C:01E9H         LINE#         66
+  C:01ECH         LINE#         67
+  C:01EFH         LINE#         69
+  C:01F2H         LINE#         70
+  C:01F5H         LINE#         71
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/05/2022  21:56:44  PAGE 6
+
+
+  C:01F8H         LINE#         72
+  C:01FBH         LINE#         73
+  C:01FEH         LINE#         74
+  C:0201H         LINE#         76
+  C:0204H         LINE#         77
+  C:0207H         LINE#         78
+  C:020AH         LINE#         80
+  C:020CH         LINE#         81
+  C:020EH         LINE#         82
+  -------         ENDPROC       UARTINIT
+  -------         PROC          _UART1_SENDDATA
+  D:0007H         SYMBOL        ch
+  C:04F5H         LINE#         87
+  C:04F5H         LINE#         88
+  C:04F7H         LINE#         89
+  C:04FAH         LINE#         90
+  C:04FCH         LINE#         91
+  -------         ENDPROC       _UART1_SENDDATA
+  -------         PROC          _UART1_SENDSTRING
+  D:001BH         SYMBOL        s
+  C:03A8H         LINE#         96
+  C:03AEH         LINE#         97
+  C:03B9H         LINE#         98
+  C:03CAH         LINE#         99
+  C:03CCH         LINE#         100
+  -------         ENDPROC       _UART1_SENDSTRING
+  -------         PROC          _UART1_HAND
+  D:0021H         SYMBOL        a
+  C:0003H         LINE#         105
+  C:0009H         LINE#         106
+  C:001DH         LINE#         107
+  C:001FH         LINE#         109
+  C:0020H         LINE#         110
+  -------         ENDPROC       _UART1_HAND
+  -------         PROC          UART1_CLR_BUF
+  C:0496H         LINE#         115
+  C:0496H         LINE#         116
+  C:04A5H         LINE#         117
+  C:04A8H         LINE#         118
+  -------         ENDPROC       UART1_CLR_BUF
+  -------         PROC          UART1
+  C:0373H         LINE#         123
+  C:037CH         LINE#         124
+  C:037EH         LINE#         125
+  C:0381H         LINE#         126
+  C:0383H         LINE#         127
+  C:038AH         LINE#         128
+  C:038CH         LINE#         129
+  C:0397H         LINE#         130
+  C:039AH         LINE#         131
+  C:039AH         LINE#         132
+  C:039AH         LINE#         133
+  C:039DH         LINE#         134
+  C:039FH         LINE#         135
+  C:039FH         LINE#         136
+  C:03A1H         LINE#         137
+  -------         ENDPROC       UART1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/05/2022  21:56:44  PAGE 7
+
+
+  -------         PROC          _UART2_SENDDATA
+  D:0007H         SYMBOL        ch
+  C:04FDH         LINE#         142
+  C:04FDH         LINE#         143
+  C:0500H         LINE#         144
+  C:0502H         LINE#         145
+  C:0504H         LINE#         146
+  -------         ENDPROC       _UART2_SENDDATA
+  -------         PROC          _UART2_SENDSTRING
+  D:0024H         SYMBOL        s
+  C:03CDH         LINE#         151
+  C:03D3H         LINE#         152
+  C:03DEH         LINE#         153
+  C:03EFH         LINE#         154
+  C:03F1H         LINE#         155
+  -------         ENDPROC       _UART2_SENDSTRING
+  -------         PROC          _UART2_HAND
+  D:0027H         SYMBOL        a
+  C:043CH         LINE#         157
+  C:0442H         LINE#         158
+  C:0456H         LINE#         159
+  C:0458H         LINE#         161
+  C:0459H         LINE#         162
+  -------         ENDPROC       _UART2_HAND
+  -------         PROC          UART2_CLR_BUF
+  C:04A9H         LINE#         164
+  C:04A9H         LINE#         165
+  C:04B8H         LINE#         166
+  C:04BBH         LINE#         167
+  -------         ENDPROC       UART2_CLR_BUF
+  -------         PROC          UART2
+  C:025BH         LINE#         169
+  C:0263H         LINE#         170
+  C:0266H         LINE#         171
+  C:026CH         LINE#         172
+  C:026FH         LINE#         173
+  C:027DH         LINE#         174
+  C:027FH         LINE#         175
+  C:028AH         LINE#         176
+  C:028DH         LINE#         177
+  C:028DH         LINE#         178
+  C:028DH         LINE#         179
+  C:0293H         LINE#         180
+  C:0296H         LINE#         181
+  C:0298H         LINE#         182
+  C:0298H         LINE#         183
+  C:029BH         LINE#         184
+  -------         ENDPROC       UART2
+  -------         PROC          _UART3_SENDDATA
+  D:0007H         SYMBOL        ch
+  C:0505H         LINE#         189
+  C:0505H         LINE#         190
+  C:0508H         LINE#         191
+  C:050AH         LINE#         192
+  C:050CH         LINE#         193
+  -------         ENDPROC       _UART3_SENDDATA
+  -------         PROC          _UART3_SENDSTRING
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/05/2022  21:56:44  PAGE 8
+
+
+  D:002AH         SYMBOL        s
+  C:03F2H         LINE#         198
+  C:03F8H         LINE#         199
+  C:0403H         LINE#         200
+  C:0414H         LINE#         201
+  C:0416H         LINE#         202
+  -------         ENDPROC       _UART3_SENDSTRING
+  -------         PROC          _UART3_HAND
+  D:002DH         SYMBOL        a
+  C:045AH         LINE#         204
+  C:0460H         LINE#         205
+  C:0474H         LINE#         206
+  C:0476H         LINE#         208
+  C:0477H         LINE#         209
+  -------         ENDPROC       _UART3_HAND
+  -------         PROC          UART3_CLR_BUF
+  C:04BCH         LINE#         211
+  C:04BCH         LINE#         212
+  C:04CBH         LINE#         213
+  C:04CEH         LINE#         214
+  -------         ENDPROC       UART3_CLR_BUF
+  -------         PROC          UART3
+  C:02A4H         LINE#         216
+  C:02ACH         LINE#         217
+  C:02AFH         LINE#         218
+  C:02B5H         LINE#         219
+  C:02B8H         LINE#         220
+  C:02C6H         LINE#         221
+  C:02C8H         LINE#         222
+  C:02D3H         LINE#         223
+  C:02D6H         LINE#         224
+  C:02D6H         LINE#         225
+  C:02D6H         LINE#         226
+  C:02DCH         LINE#         227
+  C:02DFH         LINE#         228
+  C:02E1H         LINE#         229
+  C:02E1H         LINE#         230
+  C:02E4H         LINE#         231
+  -------         ENDPROC       UART3
+  -------         PROC          _UART4_SENDDATA
+  D:0007H         SYMBOL        ch
+  C:050DH         LINE#         235
+  C:050DH         LINE#         236
+  C:0510H         LINE#         237
+  C:0512H         LINE#         238
+  C:0514H         LINE#         239
+  -------         ENDPROC       _UART4_SENDDATA
+  -------         PROC          _UART4_SENDSTRING
+  D:0008H         SYMBOL        s
+  C:0417H         LINE#         244
+  C:041DH         LINE#         245
+  C:0428H         LINE#         246
+  C:0439H         LINE#         247
+  C:043BH         LINE#         248
+  -------         ENDPROC       _UART4_SENDSTRING
+  -------         PROC          _UART4_HAND
+  D:0008H         SYMBOL        a
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/05/2022  21:56:44  PAGE 9
+
+
+  C:0478H         LINE#         250
+  C:047EH         LINE#         251
+  C:0492H         LINE#         252
+  C:0494H         LINE#         254
+  C:0495H         LINE#         255
+  -------         ENDPROC       _UART4_HAND
+  -------         PROC          UART4_CLR_BUF
+  C:04CFH         LINE#         257
+  C:04CFH         LINE#         258
+  C:04DEH         LINE#         259
+  C:04E1H         LINE#         260
+  -------         ENDPROC       UART4_CLR_BUF
+  -------         PROC          UART4
+  C:02EDH         LINE#         262
+  C:02F5H         LINE#         263
+  C:02F8H         LINE#         264
+  C:02FEH         LINE#         265
+  C:0301H         LINE#         266
+  C:030FH         LINE#         267
+  C:0311H         LINE#         268
+  C:031CH         LINE#         269
+  C:031FH         LINE#         270
+  C:031FH         LINE#         271
+  C:031FH         LINE#         272
+  C:0325H         LINE#         273
+  C:0328H         LINE#         274
+  C:032AH         LINE#         275
+  C:032AH         LINE#         276
+  C:032DH         LINE#         277
+  -------         ENDPROC       UART4
+  -------         ENDMOD        UART
+
+  -------         MODULE        ?C?CLDPTR
+  C:0046H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        STRSTR
+  D:000BH         PUBLIC        ?_strstr?BYTE
+  C:0122H         PUBLIC        _strstr
+  -------         ENDMOD        STRSTR
+
+  -------         MODULE        ?C?MEMSET
+  C:005FH         PUBLIC        ?C?MEMSET
+  -------         ENDMOD        ?C?MEMSET
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART1_SENDSTRING?UART
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART1_HAND?UART
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART1_CLR_BUF?UART
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART2_SENDSTRING?UART
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/05/2022  21:56:44  PAGE 10
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART2_HAND?UART
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART2_CLR_BUF?UART
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART3_SENDSTRING?UART
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART3_HAND?UART
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART3_CLR_BUF?UART
+
+Program Size: data=66.3 xdata=60 code=1294
+LINK/LOCATE RUN COMPLETE.  9 WARNING(S),  0 ERROR(S)
